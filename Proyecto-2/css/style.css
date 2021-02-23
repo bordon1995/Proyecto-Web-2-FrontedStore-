@@ -1,0 +1,254 @@
+:root {
+  --primario: #070606;
+  --secundario: #fff;
+  --nav: #3f3a3a;
+  --nav__a: #ffc300;
+
+  --fuente-principal: "Staatliches", cursive;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* Globales */
+body {
+  background-color: var(--primario);
+  font-size: 1.6rem;
+  /* line-height: 1.5 */
+}
+p {
+  font-family: var(--fuente-principal);
+  color: var(--secundario);
+}
+a {
+  text-decoration: none;
+}
+nav a {
+  color: var(--secundario);
+}
+img {
+  max-width: 100%;
+}
+.main {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+h1,
+h2,
+h3 {
+  text-align: center;
+  color: var(--nav__a);
+  font-family: var(--fuente-principal);
+}
+h1 {
+  font-size: 4rem;
+  margin-bottom: 5rem;
+}
+h2 {
+  font-size: 3.2rem;
+}
+h3 {
+  font-size: 2.4rem;
+}
+
+/* header */
+.header {
+  display: flex;
+  justify-content: center;
+  padding: 4rem;
+}
+
+/* navegacion */
+.nav {
+  display: flex;
+  justify-content: center;
+  background-color: var(--nav);
+}
+.nav__a {
+  font-size: 2rem;
+  padding: 0.5rem;
+  /* con el codigo gap :se ahorra mucho codigo pero como es nuevo , no es soportado en todos los navegadores */
+  margin-right: 1.3rem;
+  font-family: var(--fuente-principal);
+}
+.nav__a:last-of-type {
+  margin-right: 0;
+}
+.nav__a--activo,
+.nav__a:hover {
+  color: var(--nav__a);
+}
+
+/* Main-Grid-Producto */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+@media (min-width: 48rem) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.productos {
+  display: flex;
+  justify-content: center;
+  background-color: var(--nav);
+  padding: 1rem;
+}
+.productos__img {
+  margin-top: 0.5rem;
+}
+.productos__p {
+  display: flex;
+  justify-content: center;
+}
+.productos__nombre {
+  margin-right: 3rem;
+  font-size: 2rem;
+  font-family: var(--fuente-principal);
+}
+.productos__precio {
+  font-size: 2rem;
+  font-family: var(--fuente-principal);
+  color: var(--nav__a);
+}
+
+/* Main-Grid-Producto-Grafico */
+.grafico {
+  min-height: 30rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  grid-column: 1/3;
+}
+.grafico--img1 {
+  grid-row: 2/3;
+  background-image: url(../img/grafico1.jpg);
+}
+.grafico--img2 {
+  grid-row: 8/9;
+  background-image: url(../img/grafico2.jpg);
+}
+@media (min-width: 768px) {
+  .grafico--img2 {
+    grid-row: 5/6;
+    grid-column: 2/4;
+    background-image: url(../img/grafico2.jpg);
+  }
+}
+
+/* footer */
+.footer {
+  display: flex;
+  justify-content: center;
+}
+.footer__p {
+  font-family: var(--fuente-principal);
+  font-size: 1.7rem;
+}
+
+/* Nosotros */
+
+.grid2 {
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+}
+@media (min-width: 768px) {
+  .grid2 {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+  }
+}
+.grid2__img {
+  grid-row: 1/2;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .grid2__img {
+    grid-column: 2/3;
+  }
+}
+
+/* Nosotros-Bloques */
+.bloque_s {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+@media (min-width: 768px) {
+  .bloque_s {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+}
+.bloque {
+  text-align: center;
+}
+.bloque__img {
+  width: 100%;
+}
+.bloque__titulo {
+  margin: 0;
+}
+
+/* prducto */
+.producto__bloques {
+  display: grid;
+  height: 60rem;
+}
+@media (min-width: 768px) {
+  .producto__bloques {
+    grid-template-columns: repeat(2, 1fr);
+    width: 70rem;
+    height: 58rem;
+    margin: 0 auto;
+  }
+}
+.producto__bloque_img {
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .producto__bloque_img {
+    width: 100%;
+  }
+}
+.producto__bloque_info {
+  width: 100%;
+  font-family: var(--fuente-principal);
+  padding: 2rem;
+}
+@media (min-width: 768px) {
+  .producto__bloque_info {
+    padding: 2rem;
+    width: 100%;
+  }
+}
+.producto__bloque_info p {
+  margin-bottom: 3rem;
+}
+.bandera {
+  display: block;
+  margin: 2rem auto 0 auto;
+  padding: 1rem;
+  width: 100%;
+  background-color: var(--nav__a);
+}
+.formulario {
+  text-align: center;
+}
+.bandera2 {
+  width: 40%;
+  margin-right: 0.5rem;
+}
+@media (min-width: 768px) {
+  .bandera2 {
+    padding-top: 1rem;
+  }
+}
